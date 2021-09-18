@@ -25,7 +25,7 @@
 
 
         <h2>Transações</h2>
-        <ul>
+        <ul id="transactions" class="transactions">
             <li>Coffe</li>
             <li>Tea</li>
             <li>Milk</li>
@@ -33,18 +33,20 @@
 
         <h2>Adicionar transação</h3>
 
-            <form>
-                <div>
+            <form id="form">
+                <div class="form-control">
                     <label for="text">Nome</label>
-                    <input type="text">
+                    <input autofocus type="text" id="text" placeholder="Nome da transação">
                 </div>
 
-                <div>
-                    <label for="text">Valor</label>
-                    <input type="text">
+                <div class="form-control">
+                    <label for="amount">Valor <br />
+                        <small>(negativo - despesas, positivo - receitas)</small>
+                    </label>
+                    <input type="number" id="amount" placeholder="Valor da transação" />
                 </div>
 
-                <button>Adicionar</button>
+                <button class="btn">Adicionar</button>
             </form>
 
     </div>
