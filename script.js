@@ -1,5 +1,9 @@
 
-const transactionsUl = document.querySelector('#transactions') 
+// pegar componente por ID
+const transactionsUl = document.querySelector('#transactions');
+const moneyMinusDisplay = document.querySelector('#money-minus');
+const moneyPlusDisplay = document.querySelector('#money-plus');
+const balanceDisplay = document.querySelector('#balance');
 
 
 // declaraccao de um objeto literal
@@ -8,6 +12,10 @@ const dummyTransactions = [
     {id : 2, name : 'Salario', amount: 30},
     {id : 3, name : 'Bolo de Limao', amount: -20},
     {id : 3, name : 'Violao', amount: 150}
+]
+
+
+
 ]
 
 
