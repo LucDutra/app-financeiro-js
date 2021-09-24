@@ -4,18 +4,16 @@ const transactionsUl = document.querySelector('#transactions');
 const moneyMinusDisplay = document.querySelector('#money-minus');
 const moneyPlusDisplay = document.querySelector('#money-plus');
 const balanceDisplay = document.querySelector('#balance');
-
+const inputTransactionName = document.querySelector('#name');
+const inputTransactionAmount = document.querySelector('#amount');
 
 // declaraccao de um objeto literal
 const dummyTransactions = [
     {id : 1, name : 'Bolo de brigadeiro', amount: -20},
     {id : 2, name : 'Salario', amount: 30},
-    {id : 3, name : 'Bolo de Limao', amount: -20},
-    {id : 3, name : 'Violao', amount: 150}
-]
-
-
-
+    {id : 4, name : 'Bolo de Limao', amount: -20},
+    {id : 5, name : 'Violao', amount: 150},
+    {id : 6, name: 'Tenis', amount: 100}
 ]
 
 
@@ -42,16 +40,22 @@ const updateBalanceValues = () => {
 
     //Somatorio dos valores retornados
     const total = transactionAmounts.reduce((acumulator, transaction) => acumulator + transaction, 0).toFixed(2);
-    console.log("Soma dos valores " + total)
+    
 
     // retorna todas as receitas
     const income = transactionAmounts.filter(values => values > 0).reduce((acumulator, values) => acumulator + values,0).toFixed(2);
-    console.log("calculo das receitas " + income)
+    
 
     // retorna todas as despesas
     const expense = Math.abs(transactionAmounts.filter(value => value < 0).reduce((acumulator, value) => acumulator - value, 0)).toFixed(2);
-    console.log("calc dos negativos " + expense)
+   
+    balanceDisplay.textContent = `R$ ${total}`
+    moneyPlusDisplay.textContent = `R$ ${income}`
+    moneyMinusDisplay.textContent = `R$ ${expense}`
+
+
 }
+
 
 
 
