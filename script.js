@@ -4,7 +4,7 @@ const transactionsUl = document.querySelector('#transactions');
 const moneyMinusDisplay = document.querySelector('#money-minus');
 const moneyPlusDisplay = document.querySelector('#money-plus');
 const balanceDisplay = document.querySelector('#balance');
-const inputTransactionName = document.querySelector('#name');
+const inputTransactionName = document.querySelector('#text');
 const inputTransactionAmount = document.querySelector('#amount');
 
 // declaraccao de um objeto literal
@@ -56,9 +56,6 @@ const updateBalanceValues = () => {
 
 }
 
-
-
-
 // inicializa todas as funções
 const init = () =>{   
     dummyTransactions.forEach(addTransactionIntoDom);
@@ -67,3 +64,30 @@ const init = () =>{
 }
 
 init();
+
+// funcao que gera ID
+const generateId = () => Math.round(Math.random() * 1000);
+
+  
+form.addEventListener('submit', event =>{
+    event.preventDefault();
+
+    const transactionName = inputTransactionName.value.trim();
+    const transactionAmount = inputTransactionAmount.value.trim();
+
+    if(transactionName === "" && transactionAmount === ""){
+        alert('Informe os campos nome e valor da transação');
+        return
+
+    }
+
+const transaction = {
+    id: generateId(),
+    name: transactionName,
+    amount: transactionAmount
+}
+
+console.log(transaction);
+
+   
+});
